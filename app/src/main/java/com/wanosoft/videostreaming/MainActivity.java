@@ -31,7 +31,22 @@ public class MainActivity extends AppCompatActivity {
         visor.setMediaController(mediaController); //
         visor.start(); //empiece
 
-        LayoutInflater inflater = getLayoutInflater();
+        AlertDialog alerta = new AlertDialog.Builder(this).create();
+        alerta.setTitle("YOOOHOO");
+        alerta.setMessage("Visualizar video RTCP");
+        alerta.setIcon(R.mipmap.ic_launcher);
+        alerta.setButton(Dialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialog, int which{
+                llamar_toast();
+            })
+        });
+        
+        alerta.show();
+    }
+    
+    public void llamar_toast(){
+    LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.tostada,
                 (ViewGroup) findViewById(R.id.custom_toast_container));
 
@@ -43,11 +58,5 @@ public class MainActivity extends AppCompatActivity {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
-
-        AlertDialog alerta = new AlertDialog.Builder(this).create();
-        alerta.setTitle("YOOOHOO");
-        alerta.setMessage("Visualizar video RTCP");
-        alerta.setIcon(R.mipmap.ic_launcher);
-        alerta.setButton("OK",new Oncloick);
     }
 }
