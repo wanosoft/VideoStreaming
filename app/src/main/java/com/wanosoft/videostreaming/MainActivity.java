@@ -1,6 +1,6 @@
 package com.wanosoft.videostreaming;
 
-
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -43,5 +43,11 @@ public class MainActivity extends AppCompatActivity {
         toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(layout);
         toast.show();
+
+        AlertDialog alerta = new AlertDialog.Builder(this).create();
+        alerta.setTitle("YOOOHOO");
+        alerta.setMessage("Visualizar video RTCP");
+        alerta.setIcon(R.mipmap.ic_launcher);
+        alerta.setButton("OK",new Oncloick);
     }
 }
